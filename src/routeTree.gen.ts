@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as CategoriesRouteImport } from './routes/categories'
+import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as EditionsRouteImport } from './routes/editions'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as PartenairesRouteImport } from './routes/partenaires'
+import { Route as ActualitesIndexRouteImport } from './routes/actualites.index'
+import { Route as ActualitesSlugRouteImport } from './routes/actualites.$slug'
+import { Route as LaureatsIndexRouteImport } from './routes/laureats.index'
+import { Route as LaureatsSlugRouteImport } from './routes/laureats.$slug'
+import { Route as NominesIndexRouteImport } from './routes/nomines.index'
+import { Route as NominesSlugRouteImport } from './routes/nomines.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesRoute = CategoriesRouteImport.update({
+  id: '/categories',
+  path: '/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
+  id: '/confidentialite',
+  path: '/confidentialite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditionsRoute = EditionsRouteImport.update({
+  id: '/editions',
+  path: '/editions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartenairesRoute = PartenairesRouteImport.update({
+  id: '/partenaires',
+  path: '/partenaires',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActualitesIndexRoute = ActualitesIndexRouteImport.update({
+  id: '/actualites/',
+  path: '/actualites/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActualitesSlugRoute = ActualitesSlugRouteImport.update({
+  id: '/actualites/$slug',
+  path: '/actualites/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaureatsIndexRoute = LaureatsIndexRouteImport.update({
+  id: '/laureats/',
+  path: '/laureats/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaureatsSlugRoute = LaureatsSlugRouteImport.update({
+  id: '/laureats/$slug',
+  path: '/laureats/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NominesIndexRoute = NominesIndexRouteImport.update({
+  id: '/nomines/',
+  path: '/nomines/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NominesSlugRoute = NominesSlugRouteImport.update({
+  id: '/nomines/$slug',
+  path: '/nomines/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/categories': typeof CategoriesRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/contact': typeof ContactRoute
+  '/editions': typeof EditionsRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/partenaires': typeof PartenairesRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
+  '/laureats/$slug': typeof LaureatsSlugRoute
+  '/nomines/$slug': typeof NominesSlugRoute
+  '/actualites/': typeof ActualitesIndexRoute
+  '/laureats/': typeof LaureatsIndexRoute
+  '/nomines/': typeof NominesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/categories': typeof CategoriesRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/contact': typeof ContactRoute
+  '/editions': typeof EditionsRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/partenaires': typeof PartenairesRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
+  '/laureats/$slug': typeof LaureatsSlugRoute
+  '/nomines/$slug': typeof NominesSlugRoute
+  '/actualites': typeof ActualitesIndexRoute
+  '/laureats': typeof LaureatsIndexRoute
+  '/nomines': typeof NominesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/categories': typeof CategoriesRoute
+  '/confidentialite': typeof ConfidentialiteRoute
+  '/contact': typeof ContactRoute
+  '/editions': typeof EditionsRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/partenaires': typeof PartenairesRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
+  '/laureats/$slug': typeof LaureatsSlugRoute
+  '/nomines/$slug': typeof NominesSlugRoute
+  '/actualites/': typeof ActualitesIndexRoute
+  '/laureats/': typeof LaureatsIndexRoute
+  '/nomines/': typeof NominesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/categories'
+    | '/confidentialite'
+    | '/contact'
+    | '/editions'
+    | '/mentions-legales'
+    | '/partenaires'
+    | '/actualites/$slug'
+    | '/laureats/$slug'
+    | '/nomines/$slug'
+    | '/actualites/'
+    | '/laureats/'
+    | '/nomines/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/categories'
+    | '/confidentialite'
+    | '/contact'
+    | '/editions'
+    | '/mentions-legales'
+    | '/partenaires'
+    | '/actualites/$slug'
+    | '/laureats/$slug'
+    | '/nomines/$slug'
+    | '/actualites'
+    | '/laureats'
+    | '/nomines'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-propos'
+    | '/categories'
+    | '/confidentialite'
+    | '/contact'
+    | '/editions'
+    | '/mentions-legales'
+    | '/partenaires'
+    | '/actualites/$slug'
+    | '/laureats/$slug'
+    | '/nomines/$slug'
+    | '/actualites/'
+    | '/laureats/'
+    | '/nomines/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
+  CategoriesRoute: typeof CategoriesRoute
+  ConfidentialiteRoute: typeof ConfidentialiteRoute
+  ContactRoute: typeof ContactRoute
+  EditionsRoute: typeof EditionsRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
+  PartenairesRoute: typeof PartenairesRoute
+  ActualitesSlugRoute: typeof ActualitesSlugRoute
+  LaureatsSlugRoute: typeof LaureatsSlugRoute
+  NominesSlugRoute: typeof NominesSlugRoute
+  ActualitesIndexRoute: typeof ActualitesIndexRoute
+  LaureatsIndexRoute: typeof LaureatsIndexRoute
+  NominesIndexRoute: typeof NominesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories': {
+      id: '/categories'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confidentialite': {
+      id: '/confidentialite'
+      path: '/confidentialite'
+      fullPath: '/confidentialite'
+      preLoaderRoute: typeof ConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editions': {
+      id: '/editions'
+      path: '/editions'
+      fullPath: '/editions'
+      preLoaderRoute: typeof EditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partenaires': {
+      id: '/partenaires'
+      path: '/partenaires'
+      fullPath: '/partenaires'
+      preLoaderRoute: typeof PartenairesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/': {
+      id: '/actualites/'
+      path: '/actualites'
+      fullPath: '/actualites/'
+      preLoaderRoute: typeof ActualitesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/$slug': {
+      id: '/actualites/$slug'
+      path: '/actualites/$slug'
+      fullPath: '/actualites/$slug'
+      preLoaderRoute: typeof ActualitesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laureats/': {
+      id: '/laureats/'
+      path: '/laureats'
+      fullPath: '/laureats/'
+      preLoaderRoute: typeof LaureatsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laureats/$slug': {
+      id: '/laureats/$slug'
+      path: '/laureats/$slug'
+      fullPath: '/laureats/$slug'
+      preLoaderRoute: typeof LaureatsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nomines/': {
+      id: '/nomines/'
+      path: '/nomines'
+      fullPath: '/nomines/'
+      preLoaderRoute: typeof NominesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nomines/$slug': {
+      id: '/nomines/$slug'
+      path: '/nomines/$slug'
+      fullPath: '/nomines/$slug'
+      preLoaderRoute: typeof NominesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
+  CategoriesRoute: CategoriesRoute,
+  ConfidentialiteRoute: ConfidentialiteRoute,
+  ContactRoute: ContactRoute,
+  EditionsRoute: EditionsRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
+  PartenairesRoute: PartenairesRoute,
+  ActualitesSlugRoute: ActualitesSlugRoute,
+  LaureatsSlugRoute: LaureatsSlugRoute,
+  NominesSlugRoute: NominesSlugRoute,
+  ActualitesIndexRoute: ActualitesIndexRoute,
+  LaureatsIndexRoute: LaureatsIndexRoute,
+  NominesIndexRoute: NominesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
