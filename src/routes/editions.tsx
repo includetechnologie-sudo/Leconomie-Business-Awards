@@ -30,7 +30,7 @@ function Lightbox({ index, onClose, onMove }: { index: number; onClose: () => vo
     window.addEventListener("keydown", k);
     return () => window.removeEventListener("keydown", k);
   }, [onClose, onMove]);
-  const img = gallery[index];
+  const img = gallery[index]!;
   return (
     <motion.div role="dialog" aria-modal aria-label={img.alt} className="fixed inset-0 z-[90] flex items-center justify-center bg-night/95 p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
       <button aria-label="Fermer" className="absolute right-5 top-5 p-2 text-ivory hover:text-gold" onClick={onClose}><X /></button>
@@ -55,7 +55,7 @@ function Editions() {
                 <span className="font-display text-7xl text-gold-gradient">{String(e.number).padStart(2, "0")}</span>
                 <h2 className="mt-4 text-3xl text-night">{e.label}</h2>
                 <p className="mt-2 text-sm uppercase tracking-[0.18em] text-muted-foreground">{e.date} · {e.venue}</p>
-                <p className="mt-5 text-night">{e.winners.length} distinctions remises, dont <strong>{e.winners[0].prize}</strong> à {e.winners[0].name}.</p>
+                <p className="mt-5 text-night">{e.winners.length} distinctions remises, dont <strong>{e.winners[0]?.prize}</strong> à {e.winners[0]?.name}.</p>
                 <Link to="/laureats" className="mt-6 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-gold hover:text-night">Voir le palmarès →</Link>
               </Reveal>
             ))}

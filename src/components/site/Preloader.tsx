@@ -43,7 +43,7 @@ export function Preloader() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             >
               <img src={LOGO_URL} alt="L’Economie Business Awards" className="relative w-56 object-contain md:w-72" />
-              <span aria-hidden className="animate-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-ivory/25 to-transparent" />
+              <span aria-hidden style={{ WebkitMaskImage: `url(${LOGO_URL})`, maskImage: `url(${LOGO_URL})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} className="pointer-events-none absolute inset-0"><span className="animate-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-ivory/40 to-transparent" /></span>
             </motion.div>
           </div>
           <motion.p

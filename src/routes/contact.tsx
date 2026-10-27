@@ -10,9 +10,10 @@ const subjects = { information: "Demande d’information", partenariat: "Partena
 type Subject = keyof typeof subjects;
 
 export const Route = createFileRoute("/contact")({
-  validateSearch: (s: Record<string, unknown>): { sujet?: Subject } => ({
-    sujet: typeof s.sujet === "string" && s.sujet in subjects ? (s.sujet as Subject) : undefined,
-  }),
+  validateSearch: (s: Record<string, unknown>): { sujet?: Subject | undefined } => {
+    const v = s["sujet"];
+    return { sujet: typeof v === "string" && v in subjects ? (v as Subject) : undefined };
+  },
   head: () => seo("Contact", "Contactez l’équipe de L’Economie Business Awards : informations, partenariats, presse."),
   component: Contact,
 });
@@ -89,8 +90,8 @@ function Contact() {
               </label>
               <label className="text-xs font-semibold uppercase tracking-[0.18em] text-night sm:col-span-2">
                 Message *
-                <textarea name="message" rows={6} className={field} aria-invalid={!!errors.message} />
-                {errors.message && <span className="mt-1 block normal-case tracking-normal text-destructive">{errors.message}</span>}
+                <textarea name="message" rows={6} className={field} aria-invalid={!!errors["message"]} />
+                {errors["message"] && <span className="mt-1 block normal-case tracking-normal text-destructive">{errors["message"]}</span>}
               </label>
               <div className="sm:col-span-2"><button type="submit" className={btn.gold}>Envoyer</button></div>
             </form>
