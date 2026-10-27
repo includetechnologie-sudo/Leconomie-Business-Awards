@@ -116,7 +116,7 @@ function NextEdition() {
 }
 
 function Home() {
-  const latest = editions[0];
+  const latest = editions[0]!;
   return (
     <>
       <Hero />
